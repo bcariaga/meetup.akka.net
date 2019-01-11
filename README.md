@@ -9,7 +9,7 @@ Notas para Meetup de Akka.Net
 2. Actor Systems
     + Hierarchical Structure
 3. Actors
-    + Actor Reference
+    + [Actor Reference](docs/ActorReference.md)
     + State
     + Behavior
     + Mailbox

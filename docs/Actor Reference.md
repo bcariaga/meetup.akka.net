@@ -16,4 +16,4 @@ public class MyActor: ReceiveActor
 
  ```
 
- ![actores](https://getakka.net/images/actor.pngw)
+ ![actores](https://getakka.net/images/actor.png)

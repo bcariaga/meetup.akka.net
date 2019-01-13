@@ -18,7 +18,7 @@ Notas para Meetup de Akka.Net
     + [When an Actor Terminates](docs/WhenanActorTerminates.md)
     + [Routers](docs/Routers.md)
 4. Extras
+    + [HOCON](docs/HOCON.md)
     + [Remoting](docs/Remoting.md)
     + [Clustering](docs/Clustering.md)
-    + [HOCON](docs/HOCON.md)
 5. Codigo

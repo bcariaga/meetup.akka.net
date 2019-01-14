@@ -5,7 +5,7 @@ Notas para Meetup de Akka.Net
 
 1. Modelo de actores con Akka
     + [What is Akka.NET?](docs/WhatisAkka.NET.md)
-    + [What is the Actor Model?](docs/WhatistheActorModel.md)
+    + [What is the Actor Model?](docs/WhatIsTheActorModel.md)
 2. Actor Systems
     + [Hierarchical Structure](docs/HierarchicalStructure.md)
 3. Actors

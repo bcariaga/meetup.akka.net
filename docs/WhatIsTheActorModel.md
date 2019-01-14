@@ -9,6 +9,6 @@ Como entidades computacionales, los actores tienen estas características:
   + Se comunican con mensajes asíncronos en lugar de llamadas a métodos.
   + Ellos manejan su propio estado.
   + Al responder a un mensaje, pueden:
-    + Crea otros actores (hijos).
+    + Crear otros actores (hijos).
     + Enviar mensajes a otros actores.
     + Detener a los actores(hijos) o ellos mismos.

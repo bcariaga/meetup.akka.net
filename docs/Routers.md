@@ -5,3 +5,11 @@ Los enrutadores se pueden usar dentro o fuera de un actor, y usted puede adminis
 Akka.NET viene con varios enrutadores útiles que puede elegir de inmediato, de acuerdo con las necesidades de su aplicación. Pero también es posible crear el tuyo.
 
 # Estrategias de enrutamiento
+
+Estas son las estrategias de enrutamiento proporcionadas por Akka.NET fuera de la caja.
+
+![roundRobin](https://getakka.net/images/RoundRobinRouter.png)
+
+```csharp 
+var router = system.ActorOf(Props.Create<Worker>().WithRouter(new RoundRobinPool(5)), "some-pool");
+ ```

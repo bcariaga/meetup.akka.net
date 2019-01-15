@@ -1,3 +1,9 @@
+Un actor puede ser:
+    + Creado.
+    + Reiniciado.
+    + Terminado.
+
+
 ```csharp 
     public class Program
     {

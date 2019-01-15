@@ -1,19 +1,6 @@
 
-```csharp 
-public class MyActor: ReceiveActor
-{
-  private readonly ILoggingAdapter log = Context.GetLogger();
-
-  public MyActor()
-  {
-    Receive<string>(message => {
-      log.Info("Received String message: {0}", message);
-      Sender.Tell(message);
-    });
-    Receive<SomeMessage>(message => {...});
-  }
-}
-
- ```
+Un actor es un contenedor para el Estado, el Comportamiento, el Buzón, los Hijos y una Estrategia de Supervisión. Todo esto está encapsulado dentro de una referencia de actor. Un aspecto notable es que los actores tienen un ciclo de vida explícito, no se destruyen automáticamente cuando ya no son referenciados; después de haber creado uno, es su responsabilidad asegurarse de que también terminará, lo que también le da control sobre cómo se liberan los recursos cuando termina un actor.
 
  ![actores](https://getakka.net/images/actor.png)
+
+Como se detalla a continuación, un objeto actor debe estar protegido del exterior para poder beneficiarse del modelo de actor. Por lo tanto, los actores se representan en el exterior utilizando referencias de actores, que son objetos que se pueden pasar libremente y sin restricción. Esta división en objeto interno y externo permite la transparencia para todas las operaciones deseadas: reiniciar un actor sin necesidad de actualizar las referencias en otro lugar, colocar el objeto real del actor en hosts remotos, enviar mensajes a los actores en aplicaciones completamente diferentes. Pero el aspecto más importante es que no es posible mirar dentro de un actor y obtener su estado desde el exterior, a menos que el actor publique esta información de manera imprudente.

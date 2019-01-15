@@ -1,7 +1,42 @@
-Los objetos del actor normalmente contendrán algunas variables que reflejan los posibles estados en los que puede estar el actor. Estos datos son lo que hace que un actor sea valioso, y deben ser protegidos de la corrupción por otros actores. La buena noticia es que los actores Akka.NET conceptualmente tienen su propio hilo liviano, que está completamente protegido del resto del sistema. Esto significa que, en lugar de tener que sincronizar el acceso mediante bloqueos, puede escribir el código de su actor sin preocuparse por la concurrencia.
+```csharp 
+    public class Program
+    {
+        public static ActorSystem MyActorSystem;
+        static void Main(string[] args)
+        {
+            MyActorSystem = ActorSystem.Create("MyActorSystem");
 
-Por detrás, Akka.NET ejecutará conjuntos de actores en conjuntos de subprocesos reales, donde normalmente muchos actores comparten un subproceso, y las invocaciones subsiguientes de un actor pueden terminar siendo procesadas en diferentes subprocesos. Akka.NET se asegura de que este detalle de implementación no afecte el hilo único que maneja el estado del actor.
+            IActorRef pepita = MyActorSystem.ActorOf<Pepita>("pepita");
+        }
 
-Debido a que el estado interno es vital para las operaciones de un actor, tener un estado inconsistente es fatal. Por lo tanto, cuando el actor falla y es reiniciado por su supervisor, el estado se creará desde cero, como al crear al actor por primera vez. Esto es para permitir la capacidad de autocuración del sistema.
+        public class Pepita : ReceiveActor
+        {
+            private int _energiaDisponible;
 
-Opcionalmente, el estado de un actor se puede recuperar automáticamente al estado antes del reinicio persistiendo los mensajes recibidos y reproduciéndolos después del reinicio (Persistencia).
+            public Pepita()
+            {
+                _energiaDisponible = 100;
+            }
+
+            protected override void PostRestart(Exception reason)
+            {
+                base.PostRestart(reason);
+            }
+
+            protected override void PostStop()
+            {
+                base.PostStop();
+            }
+
+            protected override void PreRestart(Exception reason, object message)
+            {
+                base.PreRestart(reason, message);
+            }
+
+            protected override void PreStart()
+            {
+                base.PreStart();
+            }
+        }
+
+ ```

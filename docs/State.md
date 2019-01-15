@@ -38,5 +38,6 @@
                 base.PreStart();
             }
         }
+    }
 
  ```

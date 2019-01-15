@@ -15,7 +15,7 @@
     + [When an Actor Terminates](WhenanActorTerminates.md)
     + [Routers](Routers.md)
 4. Extras
+    + [HOCON](HOCON.md)
     + [Remoting](Remoting.md)
     + [Clustering](Clustering.md)
-    + [HOCON](HOCON.md)
 5. Codigo

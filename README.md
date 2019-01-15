@@ -1,5 +1,6 @@
-# meetup.akka.net
-Notas para Meetup de Akka.Net
+# Site:
+
+https://bcariaga.github.io/meetup.akka.net/
 
 # Temario
 

@@ -2,7 +2,7 @@
 
 1. Modelo de actores con Akka
     + [What is Akka.NET?](WhatisAkka.NET.md)
-    + [What is the Actor Model?](WhatIsTheActorModel.md)
+    + [What is the Actor Model?](Whatistheactormodel.md)
 2. Actor Systems
     + [Hierarchical Structure](HierarchicalStructure.md)
 3. Actors

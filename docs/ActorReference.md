@@ -10,9 +10,23 @@ Todo esto está encapsulado dentro de una referencia de actor. Un aspecto notabl
 
  ![actores](https://getakka.net/images/actor.png)
 
-Un objeto actor debe estar protegido del exterior para poder beneficiarse del modelo de actor. Por lo tanto, los actores se representan en el exterior utilizando referencias de actores, que son objetos que se pueden pasar libremente y sin restricción. Esta división en objeto interno y externo permite la transparencia para todas las operaciones deseadas: 
- + Reiniciar un actor sin necesidad de actualizar las referencias en otro lugar.
- + Colocar el objeto real del actor en hosts remotos.
- + Enviar mensajes a los actores en aplicaciones completamente diferentes. 
+```csharp 
+    public class Program
+    {
+        public static ActorSystem MyActorSystem;
+        
+        static void Main(string[] args)
+        {
+            MyActorSystem = ActorSystem.Create("MyActorSystem");
 
-Pero el aspecto más importante es que no es posible mirar dentro de un actor y obtener su estado desde el exterior, a menos que el actor publique esta información de manera imprudente.
+            IActorRef pepita1 = MyActorSystem.ActorOf<Pepita>("pepita");
+            IActorRef pepita2 = MyActorSystem.ActorOf<Pepita>("pepita");
+        }
+
+        public class Pepita : ReceiveActor
+        {
+
+        }
+    }
+
+ ```

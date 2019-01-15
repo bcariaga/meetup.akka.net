@@ -12,7 +12,7 @@ Todo esto está encapsulado dentro de una referencia de actor. Un aspecto notabl
 
 Un objeto actor debe estar protegido del exterior para poder beneficiarse del modelo de actor. Por lo tanto, los actores se representan en el exterior utilizando referencias de actores, que son objetos que se pueden pasar libremente y sin restricción. Esta división en objeto interno y externo permite la transparencia para todas las operaciones deseadas: 
  + Reiniciar un actor sin necesidad de actualizar las referencias en otro lugar.
- + Colocar el objeto real del actor en hosts remotos
+ + Colocar el objeto real del actor en hosts remotos.
  + Enviar mensajes a los actores en aplicaciones completamente diferentes. 
 
 Pero el aspecto más importante es que no es posible mirar dentro de un actor y obtener su estado desde el exterior, a menos que el actor publique esta información de manera imprudente.

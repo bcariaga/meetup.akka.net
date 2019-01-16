@@ -1,3 +1,8 @@
+---
+title: Indice
+layout: post
+---
+
 # Temario
 
 1. Modelo de actores con Akka
